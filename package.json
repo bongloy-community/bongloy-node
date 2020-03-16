@@ -1,0 +1,34 @@
+{
+  "name": "bongloy",
+  "version": "1.0.0",
+  "description": "Bongloy API wrapper",
+  "main": "lib/bongloy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/khomsovon/bongloy-node.git"
+  },
+  "engines": {
+    "node": "^8.1 || >=10.*"
+  },
+  "keywords": [
+    "Bongloy",
+    "Payment processing",
+    "credit cards",
+    "api"
+  ],
+  "author": "Bongloy <support@bongloy.com> (https://bongloy.com/)",
+  "contributors": [
+    "Khom Sovon"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khomsovon/bongloy-node/issues"
+  },
+  "homepage": "https://github.com/khomsovon/bongloy-node",
+  "dependencies": {
+    "stripe": "^8.32.0"
+  }
+}
