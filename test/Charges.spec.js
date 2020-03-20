@@ -44,8 +44,8 @@ describe('Charges', function(){
       },
       function(err, charge) {
         bongloy.charges.retrieve(charge.id, function(err, result){
-          expect(result.id).to.equal( charge.id);
-        })
+          expect(result.id).to.equal(charge.id);
+        });
       });
   });
 

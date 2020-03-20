@@ -4,7 +4,7 @@
   "description": "Bongloy API wrapper",
   "main": "lib/bongloy.js",
   "scripts": {
-    "test": "mocha || true"
+    "test": "mocha --timeout 10000 || true"
   },
   "repository": {
     "type": "git",
