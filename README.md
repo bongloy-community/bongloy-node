@@ -1,7 +1,7 @@
 # Bongloy Node.js Library
 
 [![Version](https://img.shields.io/npm/v/bongloy.svg)](https://www.npmjs.org/package/bongloy)
-[![Build Status](https://travis-ci.org/stripe/stripe-node.svg?branch=master)](https://travis-ci.org/stripe/stripe-node)
+![Build](https://github.com/khomsovon/bongloy-node/workflows/Build/badge.svg)
 [![Downloads](https://img.shields.io/npm/dm/bongloy.svg)](https://www.npmjs.com/package/bongloy)
 
 This is the Unofficial Node library for [Bongloy Payment Gateway](https://www.bongloy.com/).
