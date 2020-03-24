@@ -1,6 +1,6 @@
 {
   "name": "bongloy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bongloy API wrapper",
   "main": "lib/bongloy.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/khomsovon/bongloy-node.git"
+    "url": "git@github.com/bongloy-community/bongloy-node.git"
   },
   "engines": {
     "node": "^8.1 || >=10.*"
@@ -25,9 +25,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/khomsovon/bongloy-node/issues"
+    "url": "https://github.com/bongloy-community/bongloy-node/issues"
   },
-  "homepage": "https://github.com/khomsovon/bongloy-node",
+  "homepage": "https://github.com/bongloy-community/bongloy-node",
   "dependencies": {
     "stripe": "^8.32.0"
   },
