@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/css/custom.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'PaymentFont';
+      src: url("/fonts/paymentfont-webfont.eot");
+      src: url("/fonts/paymentfont-webfont.eot?#iefix") format('embedded-opentype'),
+           url("/fonts/paymentfont-webfont.woff") format('woff2'),
+           url("/fonts/paymentfont-webfont.woff") format('woff'),
+           url("/fonts/paymentfont-webfont.ttf") format('truetype'),
+           url("/fonts/paymentfont-webfont.svg#paymentfont-webfont") format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  <title>Bongloy Demo Nodejs</title>
+</head>
+
+<body class="bg-gray-900" style="background: white">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="/">Bongloy Demo</a>
+   <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+            <a class="nav-link" href="/"> Demo <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://www.bongloy.com/documentation">Official Documentation</a>
+         </li>
+         <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://github.com/khomsovon/bongloy-demo-node">Source Code</a>
+         </li>
+      </ul>
+   </div>
+  </nav>
+
+  <div id="content">
+    <div class="container">
+      <div class="alert alert-success" style="display:none" role="alert"> Your Charge was successfully created!  </div>
+      <div class="row">
+        <div class="col">
+           <div class="row">
+              <div class="col">
+                 <h2 class="text-center">Securely collect payment information using Bongloy.js</h2>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-md-3 col-sm-1"></div>
+              <div class="col">
+                 <div class="alert alert-danger d-none" data-name="errorMessages" role="alert"></div>
+                 <form autocomplete="on" data-name="paymentForm" novalidate="novalidate" action="/charge" accept-charset="UTF-8" method="POST">
+                    <div class="form-group hidden new_charge_token">
+                       <div class="input-group">
+                         <input class="form-control hidden" data-name="cardToken" name="token" type="hidden" id="charge_token">
+                       </div>
+                    </div>
+                    <div class="form-group tel required new_charge_card_number">
+                       <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i id="card-brand-icon" class="pf pf-credit-card"></i></span>
+                          </div>
+                          <input class="form-control string tel required" data-name="cardNumber" data-target="card-brand-icon" placeholder="Card Number" type="tel">
+                       </div>
+                       <small class="form-text text-muted">Use a sample card number listed below</small>
+                    </div>
+                    <div class="row">
+                       <div class="col">
+                          <div class="form-group tel required new_charge_expiry">
+                             <div class="input-group">
+                               <input class="form-control string tel required" data-name="cardExpiry" placeholder="Expiry" type="tel">
+                             </div>
+                          </div>
+                       </div>
+                       <div class="col">
+                          <div class="form-group tel required new_charge_cvc">
+                             <div class="input-group">
+                               <input class="form-control string tel required" data-name="cardCVC" maxlength="3" placeholder="CVC" type="tel">
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col">
+                          <button class="btn btn btn-success float-right">Buy</button>
+                       </div>
+                    </div>
+                 </form>
+              </div>
+              <div class="col-md-3 col-sm-1"></div>
+           </div>
+           <div class="row">
+              <div class="col">
+                 <p></p>
+                 <table class="table table-bordered table-striped">
+                    <thead>
+                       <tr>
+                          <th scope="col">Number</th>
+                          <th scope="col">Card Brand</th>
+                          <th scope="col">Expiry Date</th>
+                          <th scope="col">CVC</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                          <td><code>6200 0000 0000 0005</code></td>
+                          <td>Union Pay</td>
+                          <td>06 / 20</td>
+                          <td>123</td>
+                       </tr>
+                    </tbody>
+                 </table>
+                 <p></p>
+              </div>
+           </div>
+        </div>
+     </div>
+    </div>
+  </div>
+</body>
+
+<link href="css/paymentfont.css" rel="stylesheet">
+
+<script src="https://js.bongloy.com/v3/"></script>
+<script src="card.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/cleave.js"></script>
+<script src="/js/custom.js"></script>
+</html>
