@@ -68,7 +68,7 @@ Refund allow you to refund a charge that has previously been created but not yet
 bongloy.refunds
   .create({
     amount: 6000,
-    source: "token_id"
+    charge: "charge_id"
   })
   .then(refund => console.log(refund.id))
   .catch(error => console.error(error));
