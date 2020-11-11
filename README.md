@@ -21,7 +21,6 @@ yarn add bongloy
 The package needs to be configured with your account's secret key, which is
 available in the [Bongloy Dashboard](https://sandbox.bongloy.com/dashboard/api_keys). Require it with the key's
 value:
-
 ```js
 const bongloy = require('bongloy')('sk_test_...');
 
@@ -49,7 +48,7 @@ const bongloy = new Bongloy('sk_test_...');
 ## Features
 
 #### Create a charge
-
+Once you’ve securely collected and tokenized your customer's credit card you can charge the card immediately or save it for later
 ```js
 bongloy.charges
   .create({
@@ -64,6 +63,7 @@ bongloy.charges
 ```
 
 #### Create a refund
+Refund allow you to refund a charge that has previously been created but not yet refunded
 
 ```js
 bongloy.refunds
@@ -77,6 +77,7 @@ bongloy.refunds
 ```
 
 #### Create a customer
+Create a customer for creating subscriptions or future one-off charges.
 
 ```js
 bongloy.customers
