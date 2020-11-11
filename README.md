@@ -22,21 +22,71 @@ The package needs to be configured with your account's secret key, which is
 available in the [Bongloy Dashboard](https://sandbox.bongloy.com/dashboard/api_keys). Require it with the key's
 value:
 
-<!-- prettier-ignore -->
 ```js
-const Bongloy = require('bongloy');
+const bongloy = require('bongloy')('sk_test_...');
 
+bongloy.customers.create({
+  email: 'customer@example.com',
+})
+  .then(customer => console.log(customer.id))
+  .catch(error => console.error(error));
+```
+Or using ES modules and async/await:
+
+```js
+import Bongloy from 'bongloy';
 const bongloy = new Bongloy('sk_test_...');
 
+(async () => {
+  const customer = await bongloy.customers.create({
+    email: 'customer@example.com',
+  });
+
+  console.log(customer.id);
+})();
+```
+
+## Features
+
+#### Create a charge
+
+```js
 bongloy.charges
   .create({
     amount: 1000,
     currency: "USD",
-    source: "6b1ca112-add7-4bc6-b520-829e004c0580"
+    source: "token_id"
   },
   function(err, charge){
     console.log(charge);
   });
+
+```
+
+#### Create a refund
+
+```js
+bongloy.refunds
+  .create({
+    amount: 6000,
+    charge: "charg_id"
+  }, function(err, refund){
+    console.log(refund)
+  });
+
+```
+
+#### Create a customer
+
+```js
+bongloy.customers
+  .create({
+    email: 'user@example.com',
+    description: 'Bongloy customer',
+    source: "token_id"
+  }, function(err, customer){
+    console.log(customer)
+  })
 
 ```
 
