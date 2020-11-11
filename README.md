@@ -55,10 +55,9 @@ bongloy.charges
     amount: 1000,
     currency: "USD",
     source: "token_id"
-  },
-  function(err, charge){
-    console.log(charge);
-  });
+  })
+  .then(charge => console.log(charge.id))
+  .catch(error => console.error(error));
 
 ```
 
@@ -69,10 +68,10 @@ Refund allow you to refund a charge that has previously been created but not yet
 bongloy.refunds
   .create({
     amount: 6000,
-    charge: "charg_id"
-  }, function(err, refund){
-    console.log(refund)
-  });
+    source: "token_id"
+  })
+  .then(refund => console.log(refund.id))
+  .catch(error => console.error(error));
 
 ```
 
@@ -85,9 +84,23 @@ bongloy.customers
     email: 'user@example.com',
     description: 'Bongloy customer',
     source: "token_id"
-  }, function(err, customer){
-    console.log(customer)
   })
+  .then(customer => console.log(customer.id))
+  .catch(error => console.error(error));
+
+```
+
+#### Create a paymentIntent
+
+```js
+bongloy.paymentIntents
+  .create({
+    amount: 10000,
+    currency: "USD",
+    "payment_method_types[]": "qr_code"
+  })
+  .then(paymentIntent => console.log(paymentIntent.id))
+  .catch(error => console.error(error));
 
 ```
 
